@@ -1,64 +1,62 @@
 [![ioredis](https://cdn.rawgit.com/luin/ioredis/57b5b89e3e9111ff25d8c62c0bc58ed42e5b8d1e/logo.svg)](https://github.com/luin/ioredis)
-
 [![Build Status](https://travis-ci.org/luin/ioredis.svg?branch=master)](https://travis-ci.org/luin/ioredis)
 [![Test Coverage](https://codeclimate.com/github/luin/ioredis/badges/coverage.svg)](https://codeclimate.com/github/luin/ioredis)
 [![Code Climate](https://codeclimate.com/github/luin/ioredis/badges/gpa.svg)](https://codeclimate.com/github/luin/ioredis)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Join the chat at https://gitter.im/luin/ioredis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/luin/ioredis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A robust, performance-focused and full-featured [Redis](http://redis.io) client for [Node.js](https://nodejs.org).
+[Node.js를](https://nodejs.org/) 위한 강력하고 성능 중심의 완전한 기능을 갖춘 [Redis](http://redis.io/) 클라이언트 .
 
-Supports Redis >= 2.6.12 and (Node.js >= 6).
+Redis> 2.6.12 및 (Node.js> = 6)을 지원합니다.
 
 # Features
-ioredis is a robust, full-featured Redis client that is
-used in the world's biggest online commerce company [Alibaba](http://www.alibaba.com/) and many other awesome companies.
+ioredis는 세계 최대의 온라인 상거래 회사 인 [Alibaba](http://www.alibaba.com/) 및 다른 많은 훌륭한 회사 에서 사용되는 강력하고 완벽한 기능을 갖춘 Redis 클라이언트입니다 .
 
-0. Full-featured. It supports [Cluster](http://redis.io/topics/cluster-tutorial), [Sentinel](http://redis.io/topics/sentinel), [Pipelining](http://redis.io/topics/pipelining) and of course [Lua scripting](http://redis.io/commands/eval) & [Pub/Sub](http://redis.io/topics/pubsub) (with the support of binary messages).
-0. High performance.
-0. Delightful API. It works with Node callbacks and Native promises.
-0. Transformation of command arguments and replies.
-0. Transparent key prefixing.
-0. Abstraction for Lua scripting, allowing you to define custom commands.
-0. Support for binary data.
-0. Support for TLS.
-0. Support for offline queue and ready checking.
-0. Support for ES6 types, such as `Map` and `Set`.
-0. Support for GEO commands (Redis 3.2 Unstable).
-0. Sophisticated error handling strategy.
+1. 모든 기능을 갖춘. 그것은 지원 [클러스터](http://redis.io/topics/cluster-tutorial) , [센티넬](http://redis.io/topics/sentinel) , [파이프 라이닝](http://redis.io/topics/pipelining) 물론 [루아 스크립트](http://redis.io/commands/eval) & [펍 / 하위](http://redis.io/topics/pubsub) (바이너리 메시지의 지원을).
+2. 고성능.
+3. 유쾌한 API. 노드 콜백 및 기본 약속과 함께 작동합니다.
+4. 명령 인수와 응답의 변환.
+5. 투명한 키 접두사.
+6. 루아 스크립팅을위한 추상화로 커스텀 커맨드를 정의 할 수 있습니다.
+7. 바이너리 데이터 지원.
+8. TLS 지원.
+9. 오프라인 대기열 및 준비 확인 지원.
+10. 같은 ES6 유형에 대한 지원 `Map`과 `Set`.
+11. GEO 명령 지원 (Redis 3.2 Unstable).
+12. 정교한 오류 처리 전략.
 
 # Links
-* [API Documentation](API.md)
-* [Changelog](Changelog.md)
-* [Migrating from node_redis](https://github.com/luin/ioredis/wiki/Migrating-from-node_redis)
-* [Error Handling](#error-handling)
+- [API 문서](https://github.com/luin/ioredis/blob/master/API.md)
+- [변경 로그](https://github.com/luin/ioredis/blob/master/Changelog.md)
+- [node_redis에서 마이그레이션](https://github.com/luin/ioredis/wiki/Migrating-from-node_redis)
+- [오류 처리](https://github.com/luin/ioredis#error-handling)
 
-## Become a Sponsor to Support ioredis's Development
-Open source is hard and time-consuming. If you want to invest in ioredis's future you can become a sponsor and make us spend more time on this library's improvements and new features.
+## Become a Sponsor to Support ioredis's Development(ioredis의 개발을 지원하기위한 스폰서)
+오픈 소스는 어렵고 시간이 많이 걸립니다. ioredis의 미래에 투자하고 싶다면 스폰서가되어이 도서관의 개선점과 새로운 기능에 더 많은 시간을 할애 할 수 있습니다.
 
 <a href="https://opencollective.com/ioredis"><img src="https://opencollective.com/ioredis/tiers/sponsor.svg?avatarHeight=36"></a>
 
-Thank you for using ioredis :-)
+ioredis를 사용해 주셔서 감사합니다 :-)
 
 <hr>
 <a href="https://itunes.apple.com/app/medis-gui-for-redis/id1063631769"><img align="right" src="medis.png" alt="Download on the App Store"></a>
 
 
-### Advertisement
+### Advertisement(광고)
 
-Looking for a Redis GUI manager for OS X, Windows and Linux? Here's [Medis](https://itunes.apple.com/us/app/medis-gui-for-redis/id1063631769)!
+OS X, Windows 및 Linux 용 Redis GUI 관리자를 찾으십니까? 여기 [메디스가 있습니다](https://itunes.apple.com/us/app/medis-gui-for-redis/id1063631769) !
 
-Medis is an open-sourced, beautiful, easy-to-use Redis GUI management application.
+Medis는 오픈 소스이며, 아름답고 사용하기 쉬운 Redis GUI 관리 응용 프로그램입니다.
 
-Medis starts with all the basic features you need:
+Medis는 필요한 기본 기능부터 시작합니다.
 
-* Keys viewing/editing
-* SSH Tunnel for connecting with remote servers
-* Terminal for executing custom commands
-* JSON/MessagePack format viewing/editing and built-in highlighting/validator
-* And other awesome features...
+- 키보기 / 편집
+- 원격 서버와의 연결을위한 SSH 터널
+- 사용자 지정 명령을 실행하기위한 터미널
+- JSON / MessagePack 형식보기 / 편집 및 내장 된 강조 표시 / 유효성 검사기
+- 그리고 다른 멋진 기능 ...
 
-[Medis is open sourced on GitHub](https://github.com/luin/medis)
+[Medis는 GitHub에서 오픈 소스입니다.](https://github.com/luin/medis)https://github.com/luin/ioredis#error-handling)
 
 <hr>
 
@@ -80,16 +78,16 @@ redis.get('foo', function (err, result) {
   console.log(result);
 });
 
-// Or using a promise if the last argument isn't a function
+// 또는 마지막 인수가 함수가 아닌 경우 약속을 사용합니다.
 redis.get('foo').then(function (result) {
   console.log(result);
 });
 
-// Arguments to commands are flattened, so the following are the same:
+// 명령에 대한 인수는 병합되므로 다음과 동일합니다:
 redis.sadd('set', 1, 3, 5, 7);
 redis.sadd('set', [1, 3, 5, 7]);
 
-// All arguments are passed directly to the redis server:
+// 모든 인수는 redis 서버로 직접 전달됩니다:
 redis.set('key', 100, 'EX', 10);
 ```
 
