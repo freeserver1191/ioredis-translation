@@ -111,8 +111,7 @@ new Redis({
 })
 ```
 
-연결 옵션을 [`redis://` URL] 로 지정할 수도 있습니다.
-(http://www.iana.org/assignments/uri-schemes/prov/redis):
+연결 옵션을 [`redis://` URL](http://www.iana.org/assignments/uri-schemes/prov/redis) 로 지정할 수도 있습니다.:
 
 ```javascript
 // 암호 "authpassword"를 사용하여 127.0.0.1:6380, db 4에 연결합니다. 
