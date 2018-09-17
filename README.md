@@ -27,7 +27,7 @@ ioredis는 세계 최대의 온라인 상거래 회사 인 [Alibaba](http://www.
 12. 정교한 오류 처리 전략.
 
 # Links
-- [API 문서](https://github.com/luin/ioredis/blob/master/API.md)
+- [API 문서](API.md)
 - [변경 로그](https://github.com/luin/ioredis/blob/master/Changelog.md)
 - [node_redis에서 마이그레이션](https://github.com/luin/ioredis/wiki/Migrating-from-node_redis)
 - [오류 처리](https://github.com/luin/ioredis#error-handling)
