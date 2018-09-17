@@ -35,34 +35,34 @@
 Creates a Redis instance
 
 
-| Param                                   | Type                           | Default       | Description                                                  |
-| --------------------------------------- | ------------------------------ | ------------- | ------------------------------------------------------------ |
-| [port]                                  | `number` | `string` | `Object` | `6379`        | Redis 서버의 포트 또는 URL 문자열 (아래 예제 참조) 또는 `options`객체 (세 번째 인수 참조). |
-| [host]                                  | `string` | `Object`            | `"localhost"` | Redis 서버의 호스트는 첫 번째 인수가 URL 문자열 일 때이 인수는 객체를 나타내는 옵션입니다. |
-| [options]                               | `Object`                       |               | 다른 옵션.                                                   |
-| [options.port]                          | `number`                       | `6379`        | Redis 서버의 포트입니다.                                     |
-| [options.host]                          | `string`                       | `"localhost"` | Redis 서버의 호스트.                                         |
-| [options.family]                        | `string`                       | `4`           | IP 스택의 버전. 기본값은 4입니다.                            |
-| [options.path]                          | `string`                       | `null`        | 로컬 도메인 소켓 경로. 설정하면 및`port`, 무시됩니다.`host``family` |
-| [options.keepAlive]                     | `number`                       | `0`           | 시작하기 전에 지연 시간이 Xms 인 소켓의 TCP KeepAlive. keepAlive를 사용하지 않으려면 숫자가 아닌 값으로 설정하십시오. |
-| [options.noDelay]                       | `boolean`                      | `true`        | Nagle의 알고리즘을 비활성화할지 여부. 기본적으로 지연 시간을 줄이려면이 기능을 비활성화하십시오. |
-| [options.connectionName]                | `string`                       | `null`        | 연결 이름.                                                   |
-| [options.db]                            | `number`                       | `0`           | 사용할 데이터베이스 인덱스입니다.                            |
-| [options.password]                      | `string`                       | `null`        | 설정된 경우 클라이언트는이 옵션 값과 함께 AUTH 명령을 전송합니다. |
-| [options.dropBufferSupport]             | `boolean`                      | `false`       | 더 나은 성능을 위해 버퍼 지원을 중단하십시오. 이 옵션은 큰 배열 응답을 처리 할 때 사용 가능하게 설정하는 것이 좋으며 버퍼 지원이 필요하지 않습니다. |
-| [options.enableReadyCheck]              | `boolean`                      | `true`        | Redis 서버에 대한 연결이 설정되면 서버가 여전히 디스크에서 데이터베이스를로드 중일 수 있습니다. 로드하는 동안 서버는 명령에 응답하지 않습니다. 이 문제를 해결하기 위해이 옵션을 사용 `true`하면 ioredis가 Redis 서버의 상태를 확인하고 Redis 서버가 명령을 처리 할 수있을 때 `ready`이벤트가 방출됩니다. |
-| [options.enableOfflineQueue]            | `boolean`                      | `true`        | 레디스 서버에 활성 연결이 없을 경우 기본적으로 명령은 큐에 추가하고 연결이 "준비"일단 실행 (`enableReadyCheck`이다 `true`, "준비"는 레디 스 서버가 디스크에서 데이터베이스를로드 다른 수단을 의미 Redis 서버에 대한 연결이 설정되었습니다). 이 옵션이 false이면 연결 준비가되지 않았을 때 명령을 실행할 때 오류가 반환됩니다. |
-| [options.connectTimeout]                | `number`                       | `10000`       | Redis 서버에 처음 연결하는 동안 시간 초과가 발생하기 전의 밀리 초입니다. |
-| [options.autoResubscribe]               | `boolean`                      | `true`        | 다시 연결 한 후 이전 연결이 구독자 모드 인 경우 클라이언트는이 채널을 자동으로 다시 구독합니다. |
-| [options.autoResendUnfulfilledCommands] | `boolean`                      | `true`        | 참이면 클라이언트는 재 연결될 때 이전 연결에서 완료되지 않은 명령 (예 : 블록 명령)을 다시 보냅니다. |
-| [options.lazyConnect]                   | `boolean`                      | `false`       | 기본적으로 새 `Redis`인스턴스가 생성되면 자동으로 Redis 서버에 연결됩니다. 명령이 호출 될 때까지 인스턴스 연결을 끊기를 원하면 `lazyConnect`생성자에 옵션을 전달할 수 있습니다.`javascript var redis = new Redis({ lazyConnect: true }); // No attempting to connect to the Redis server here. // Now let's connect to the Redis server redis.get('foo', function () { });` |
-| [options.tls]                           | `Object`                       |               | TLS connection support. See <https://github.com/luin/ioredis#tls-options> |
-| [options.keyPrefix]                     | `string`                       | `"''"`        | 명령의 모든 키 앞에 추가 할 접두사입니다.                    |
-| [options.retryStrategy]                 | `function`                     |               | See "Quick Start" section                                    |
-| [options.maxRetriesPerRequest]          | `number`                       |               | See "Quick Start" section                                    |
-| [options.reconnectOnError]              | `function`                     |               | See "Quick Start" section                                    |
-| [options.readOnly]                      | `boolean`                      | `false`       | 연결에 READONLY 모드를 사용 가능하게하십시오. 클러스터 모드에서만 사용 가능합니다. |
-| [options.stringNumbers]                 | `boolean`                      | `false`       | 강제 번호는 항상 JavaScript 문자열로 반환됩니다. 이 옵션은 큰 숫자를 처리 할 때 필요합니다 ([-2^53,+2^53] 범위 초과). |
+| Param                                   | Type                                                         | Default                               | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------ |
+| [port]                                  | <code>number</code> \| <code>string</code> \| <code>Object</code> | <code>6379</code>                     | Redis 서버의 포트 또는 URL 문자열 (아래 예제 참조) 또는 `options`객체 (세 번째 인수 참조). |
+| [host]                                  | <code>string</code> \| <code>Object</code>                   | <code>&quot;localhost&quot;</code>    | Redis 서버의 호스트는 첫 번째 인수가 URL 문자열 일 때이 인수는 객체를 나타내는 옵션입니다. |
+| [options]                               | <code>Object</code>                                          |                                       | 다른 옵션.                                                   |
+| [options.port]                          | <code>number</code>                                          | <code>6379</code>                     | Redis 서버의 포트입니다.                                     |
+| [options.host]                          | <code>string</code>                                          | <code>&quot;localhost&quot;</code>    | Redis 서버의 호스트.                                         |
+| [options.family]                        | <code>string</code>                                          | <code>4</code>                        | IP 스택의 버전. 기본값은 4입니다.                            |
+| [options.path]                          | <code>string</code>                                          | <code>null</code>                     | 로컬 도메인 소켓 경로. 설정하면 및`port`, 무시됩니다.`host``family` |
+| [options.keepAlive]                     | <code>number</code>                                          | <code>0</code>                        | 시작하기 전에 지연 시간이 Xms 인 소켓의 TCP KeepAlive. keepAlive를 사용하지 않으려면 숫자가 아닌 값으로 설정하십시오. |
+| [options.noDelay]                       | <code>boolean</code>                                         | <code>true</code>                     | Nagle의 알고리즘을 비활성화할지 여부. 기본적으로 지연 시간을 줄이려면이 기능을 비활성화하십시오. |
+| [options.connectionName]                | <code>string</code>                                          | <code>null</code>                     | 연결 이름.                                                   |
+| [options.db]                            | <code>number</code>                                          | <code>0</code>                        | 사용할 데이터베이스 인덱스입니다.                            |
+| [options.password]                      | <code>string</code>                                          | <code>null</code>                     | 설정된 경우 클라이언트는이 옵션 값과 함께 AUTH 명령을 전송합니다. |
+| [options.dropBufferSupport]             | <code>boolean</code>                                         | <code>false</code>                    | 더 나은 성능을 위해 버퍼 지원을 중단하십시오. 이 옵션은 큰 배열 응답을 처리 할 때 사용 가능하게 설정하는 것이 좋으며 버퍼 지원이 필요하지 않습니다. |
+| [options.enableReadyCheck]              | <code>boolean</code>                                         | <code>true</code>                     | Redis 서버에 대한 연결이 설정되면 서버가 여전히 디스크에서 데이터베이스를로드 중일 수 있습니다. 로드하는 동안 서버는 명령에 응답하지 않습니다. 이 문제를 해결하기 위해이 옵션을 사용 `true`하면 ioredis가 Redis 서버의 상태를 확인하고 Redis 서버가 명령을 처리 할 수있을 때 `ready`이벤트가 방출됩니다. |
+| [options.enableOfflineQueue]            | <code>boolean</code>                                         | <code>true</code>                     | 레디스 서버에 활성 연결이 없을 경우 기본적으로 명령은 큐에 추가하고 연결이 "준비"일단 실행 (`enableReadyCheck`이다 `true`, "준비"는 레디 스 서버가 디스크에서 데이터베이스를로드 다른 수단을 의미 Redis 서버에 대한 연결이 설정되었습니다). 이 옵션이 false이면 연결 준비가되지 않았을 때 명령을 실행할 때 오류가 반환됩니다. |
+| [options.connectTimeout]                | <code>number</code>                                          | <code>10000</code>                    | Redis 서버에 처음 연결하는 동안 시간 초과가 발생하기 전의 밀리 초입니다. |
+| [options.autoResubscribe]               | <code>boolean</code>                                         | <code>true</code>                     | 다시 연결 한 후 이전 연결이 구독자 모드 인 경우 클라이언트는이 채널을 자동으로 다시 구독합니다. |
+| [options.autoResendUnfulfilledCommands] | <code>boolean</code>                                         | <code>true</code>                     | 참이면 클라이언트는 재 연결될 때 이전 연결에서 완료되지 않은 명령 (예 : 블록 명령)을 다시 보냅니다. |
+| [options.lazyConnect]                   | <code>boolean</code>                                         | <code>false</code>                    | 기본적으로 새 `Redis`인스턴스가 생성되면 자동으로 Redis 서버에 연결됩니다. 명령이 호출 될 때까지 인스턴스 연결을 끊기를 원하면 `lazyConnect`생성자에 옵션을 전달할 수 있습니다.`javascript var redis = new Redis({ lazyConnect: true }); // No attempting to connect to the Redis server here. // Now let's connect to the Redis server redis.get('foo', function () { });` |
+| [options.tls]                           | <code>Object</code>                                          |                                       | TLS connection support. See https://github.com/luin/ioredis#tls-options |
+| [options.keyPrefix]                     | <code>string</code>                                          | <code>&quot;&#x27;&#x27;&quot;</code> | 명령의 모든 키 앞에 추가 할 접두사입니다.                    |
+| [options.retryStrategy]                 | <code>function</code>                                        |                                       | See "Quick Start" section                                    |
+| [options.maxRetriesPerRequest]          | <code>number</code>                                          |                                       | See "Quick Start" section                                    |
+| [options.reconnectOnError]              | <code>function</code>                                        |                                       | See "Quick Start" section                                    |
+| [options.readOnly]                      | <code>boolean</code>                                         | <code>false</code>                    | 연결에 READONLY 모드를 사용 가능하게하십시오. 클러스터 모드에서만 사용 가능합니다. |
+| [options.stringNumbers]                 | <code>boolean</code>                                         | <code>false</code>                    | 강제 번호는 항상 JavaScript 문자열로 반환됩니다. 이 옵션은 큰 숫자를 처리 할 때 필요합니다 ([-2^53,+2^53] 범위 초과). |
 
 **Example**  
 ```js
